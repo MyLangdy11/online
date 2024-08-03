@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Online Video Learning</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .navbar {
+      background-color: #333;
+      color: white;
+      padding: 1rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    #logout-button {
+      background-color: red;
+      color: white;
+      border: none;
+      padding: 0.5rem 1rem;
+      cursor: pointer;
+    }
+    .course {
+      border: 1px solid #ccc;
+      padding: 1rem;
+      margin: 1rem;
+      cursor: pointer;
+    }
+    .course img {
+      max-width: 100%;
+    }
+    .course h3 {
+      margin-top: 0.5rem;
+    }
+    .lesson {
+      margin-top: 1rem;
+    }
+    .play-button.enabled {
+      background-color: green;
+      color: white;
+      cursor: pointer;
+    }
+    .play-button {
+      background-color: grey;
+      color: white;
+      cursor: not-allowed;
+    }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <h1>Master-IT Learn Online</h1>
+    <button id="logout-button" style="display:none;" onclick="logout()">Logout</button>
+  </nav>
+
+  <!-- Login Form -->
+  <div id="login-form">
+    <h2>Login</h2>
+    <input type="text" id="username" placeholder="Username">
+    <input type="password" id="password" placeholder="Password">
+    <button onclick="login()">Login</button>
+    <p id="message"></p>
+  </div>
+
+  <!-- Main Content -->
+  <div id="main-content" style="display: none;">
+    <div class="course" data-course-code="course1" onclick="toggleLessons(this)">
+      <img src="course1-cover.jpg" alt="Course 1 Cover">
+      <h3>Web Developer</h3>
+      <div class="lessons" style="display: none;">
+        <div class="lesson">
+          <iframe src="" frameborder="0" allowfullscreen></iframe>
+          <p>Lesson 1: Introduction</p>
+          <button class="play-button" disabled>Play</button>
+        </div>
+        <div class="lesson">
+          <iframe src="" frameborder="0" allowfullscreen></iframe>
+          <p>Lesson 2: Basics</p>
+          <button class="play-button" disabled>Play</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="course" data-course-code="course2" onclick="toggleLessons(this)">
+      <img src="course2-cover.jpg" alt="Course 2 Cover">
+      <h3>Front-End Developer</h3>
+      <div class="lessons" style="display: none;">
+        <div class="lesson">
+          <iframe src="" frameborder="0" allowfullscreen></iframe>
+          <p>Lesson 1: Introduction to HTML</p>
+          <button class="play-button" disabled>Play</button>
+        </div>
+        <div class="lesson">
+          <iframe src="" frameborder="0" allowfullscreen></iframe>
+          <p>Lesson 2: CSS Basics</p>
+          <button class="play-button" disabled>Play</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
